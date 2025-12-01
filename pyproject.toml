@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-dbml"
+version = "0.1.0"
+description = "Natural Language to Database Schema Compiler"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["database", "schema", "dbml", "natural-language", "llm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Database",
+    "Topic :: Software Development :: Code Generators",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/llm-dbml"
+Documentation = "https://github.com/yourusername/llm-dbml#readme"
+Repository = "https://github.com/yourusername/llm-dbml"
+Issues = "https://github.com/yourusername/llm-dbml/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["llm_dbml*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
